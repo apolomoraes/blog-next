@@ -5,4 +5,5 @@ module.exports = {
   parser: 'flow',
   printWidth: 80,
   tabWidth: 2,
+  usePrettierrc: false,
 }
