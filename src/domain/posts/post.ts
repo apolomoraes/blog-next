@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 export type PostID = number;
 
-export type PostAuthor = {
-  id: PostID;
+export type AuthorAttributesData = {
   name: string;
   created_by: number;
   updated_by: number;
@@ -10,13 +9,43 @@ export type PostAuthor = {
   updated_at: string;
 };
 
-export type PostCategory = {
-  id: PostID;
+// export type PostAuthor = {
+//   id: PostID;
+//   name: string;
+//   created_by: number;
+//   updated_by: number;
+//   created_at: string;
+//   updated_at: string;
+// };
+
+export type PostAuthor = {
+  data: {
+    id: PostID;
+    attributes: AuthorAttributesData;
+  };
+};
+
+export type CategoryAttributesData = {
   name: string;
   created_by: number;
   updated_by: number;
-  created_at: string;
-  updated_at: string;
+  publishedAt: string;
+};
+
+// export type PostCategory = {
+//   id: PostID;
+//   name: string;
+//   created_by: number;
+//   updated_by: number;
+//   created_at: string;
+//   updated_at: string;
+// };
+
+export type PostCategory = {
+  data: {
+    id: PostID;
+    attributes: CategoryAttributesData;
+  };
 };
 
 export type PostCreatedBy = {
@@ -60,8 +89,7 @@ export type PostCover = PostCoverFormat & {
   };
 };
 
-export type PostData = {
-  id: PostID;
+export type PostAttributesData = {
   title: string;
   content: string;
   slug: string;
@@ -72,4 +100,23 @@ export type PostData = {
   created_at: string;
   updated_at: string;
   cover: PostCover;
+};
+
+// export type PostData = {
+//   id: PostID;
+//   title: string;
+//   content: string;
+//   slug: string;
+//   author: PostAuthor;
+//   category: PostCategory;
+//   created_by: PostCreatedBy;
+//   updated_by: PostCreatedBy;
+//   created_at: string;
+//   updated_at: string;
+//   cover: PostCover;
+// };
+
+export type PostData = {
+  id: PostID;
+  attributes: PostAttributesData;
 };
