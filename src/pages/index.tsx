@@ -2,6 +2,7 @@
 import { PostData } from '@/domain/posts/post';
 import { GetStaticProps } from 'next';
 import { getAllPosts } from '@/data/posts/get-all-posts';
+import HomePage from '@/containers/HomePage';
 
 export type HomeProps = {
   posts: PostData[];
@@ -15,12 +16,7 @@ export default function Home({ posts }: HomeProps) {
   // }, [posts]);
 
   return (
-    <div>
-      {posts && posts.map((post) => (
-        <h2 key={post.id}>{post.attributes.title}</h2>
-      ))
-      }
-    </div>
+    <HomePage posts={posts} />
   );
 }
 
