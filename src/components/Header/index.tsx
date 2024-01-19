@@ -6,9 +6,7 @@ import { SITE_NAME } from "@/config/app-config"
 export const Header = () => {
   return (
     <Container>
-      <Link href='/'>
-        <a href="">{SITE_NAME}</a>
-      </Link>
+      <Link href='/'>{SITE_NAME}</Link>
     </Container>
   )
 }
