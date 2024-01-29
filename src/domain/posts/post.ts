@@ -1,6 +1,15 @@
 /* eslint-disable prettier/prettier */
 export type PostID = number;
 
+export type metaAttributesData = {
+  pagination: {
+    page: number;
+    pageSize: number;
+    pageCount: number;
+    total: number;
+  }
+}
+
 export type AuthorAttributesData = {
   name: string;
   created_by: number;
@@ -158,6 +167,7 @@ export type PostAttributesData = {
 // };
 
 export type PostData = {
+  meta: metaAttributesData;
   id: PostID;
   attributes: PostAttributesData;
 };
